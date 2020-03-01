@@ -1,0 +1,22 @@
+<p>View module comp1 works!</p>
+
+
+<div *ngIf="books.length > 0" class="container">
+        <h2>Employees</h2>  
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td> {{book.name}}</td>
+                <td> {{book.author}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteBook()">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+</div>

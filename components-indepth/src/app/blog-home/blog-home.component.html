@@ -1,0 +1,23 @@
+<div>
+        <p style="color:blue">You made good choice by selecting angular!</p>
+</div>
+
+<app-card>
+<a href='#' class="btn btn-primary blog-btn" (click)="expandAllBlogPostSummary()">Expand all</a>
+
+<a href='#' class="btn btn-primary blog-btn" (click)="markAllBlogPostFavorite()">Favorite all</a>
+</app-card>
+
+<app-blog-post-tile 
+        *ngFor="let post of blogPostArray[currentPage]"
+        [post]="post" #tile>
+</app-blog-post-tile>
+
+
+
+<!-- <app-blog-post-tile [post]="blogPostArray[0][0]" #tile></app-blog-post-tile> -->
+
+<app-pagination [numberOfPages]="blogPostArray.length"
+                (pageNumberClick)= "updatePage($event)">
+</app-pagination>
+

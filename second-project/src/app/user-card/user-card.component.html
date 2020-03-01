@@ -1,0 +1,18 @@
+<!-- <h2>user-card works!</h2> -->
+
+<div class="user-card">
+    <h5 class="name">{{user.name}}</h5>
+    <p>{{user.role}}</p>
+
+    <button (click)='toggleFun()'>{{btnDesc}}</button>
+
+    <div *ngIf='!flag'>
+        <p class="address">{{user.address}}</p>
+        <div class="phone">
+            <div>
+                <span>Phone:</span>
+                <p *ngFor="let num of user.phone">{{num}}</p>
+            </div>
+        </div>
+    </div>
+</div>

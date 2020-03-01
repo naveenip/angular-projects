@@ -1,0 +1,16 @@
+<div class='content'>
+    <h3>REST service invoke Illustration:-</h3>
+    Username:<input type='text' [(ngModel)]='name'>
+
+    <button (click)='getUserData()'> Search</button>
+
+    <div *ngIf='response'>
+        <h3>User Details:</h3>
+        <div class="data">
+            <p>Name:{{response.name}}</p>
+            <p>Id:{{response.id}}</p>
+            <p>Location:{{response.location}}</p>
+            <p>Followers:{{response.followers}}</p>
+        </div>
+    </div>
+</div>

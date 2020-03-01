@@ -1,0 +1,41 @@
+<p>book-store works!</p>
+
+<div class="container">
+        <form class="form-inline" [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
+            <label for="bookId"class="mr-sm-2">Book Id:</label>
+            <input id="bookId" class="form-control mb-2 mr-sm-2" type="text" formControlName="bookId"/>
+            <label for="name"class="mr-sm-2">Book Name:</label>
+            <input id="name" class="form-control mb-2 mr-sm-2" type="text" formControlName="name"/>
+            <label for="author" class="mr-sm-2">Book Author:</label>
+            <input id="author" class="form-control mb-2 mr-sm-2" type="text" formControlName="author"/>
+             
+            <button style="margin:5px;" class="btn btn-success btn-sm mb-2" type="submit">Add Book</button>
+            <button style="margin:5px;" class="btn btn-info btn-sm mb-2" type="submit">Update Book</button> 
+        </form>
+</div>
+
+<br><br>
+
+<div class="container" *ngIf="books.length > 0">
+    <h4>Avilable Books</h4>
+    <div class="well well-sm">
+       
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.name}}</td>
+                <td>{{book.author}}</td>
+                <td><button (click)="deleteBook(book)" class="btn btn-danger btn-sm">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+        
+</div>

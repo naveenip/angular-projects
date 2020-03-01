@@ -1,0 +1,9 @@
+<h2 style='color:green; padding:2px' align="center">{{title}}</h2>
+
+<p><a *ngFor='let route of routes' [routerLink]='route.url'> {{route.linkname}}</a></p>
+
+
+
+<router-outlet></router-outlet>
+
+<app-vcomp></app-vcomp>
